@@ -6,6 +6,7 @@ export default function NavBar() {
     <nav>
       <Link to="/">Mega Robot</Link>
       <Link to="catalog">Shop Now</Link>
+      <button>Go to Cart</button>
     </nav>
   );
 }
