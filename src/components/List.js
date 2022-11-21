@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
+import Product from "./Product";
+
 import leopardImg from "../images/leopard.jpeg";
 import dinosaurImg from "../images/dinosaur.jpeg";
 import mosquitoImg from "../images/mosquito.jpeg";
@@ -53,8 +55,22 @@ const products = [
 export default function List() {
   let { category } = useParams("category");
   if (category === undefined) {
-    category = "all product";
+    return (
+      <div>
+        {products.map((product) => {
+          return <Product key={product.id} product={product} />;
+        })}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {products
+          .filter((product) => (product.category = category))
+          .map((product) => {
+            return <Product key={product.id} product={product} />;
+          })}
+      </div>
+    );
   }
-
-  return <div>{category}</div>;
 }
