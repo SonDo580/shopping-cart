@@ -66,7 +66,7 @@ export default function List() {
     return (
       <div>
         {products
-          .filter((product) => (product.category = category))
+          .filter((product) => product.category === category)
           .map((product) => {
             return <Product key={product.id} product={product} />;
           })}
