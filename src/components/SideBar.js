@@ -6,7 +6,7 @@ export default function SideBar() {
     <aside>
       <ul>
         <li>
-          <Link to="/">All Robots</Link>
+          <Link to="">All Robots</Link>
         </li>
         <li>
           <Link to="reptile">Reptile</Link>

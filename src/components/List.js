@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 export default function List() {
   const { category } = useParams("category");
+  console.log(category);
 
   return <div>{category}</div>;
 }
