@@ -10,7 +10,9 @@ export default function App() {
   // Add and remove products logic
   const [chosenProducts, setChosenProducts] = useState([]);
 
-  const addToCart = () => {};
+  const addToCart = (item) => {
+    setChosenProducts((prevChosenProducts) => [...prevChosenProducts, item]);
+  };
   const removeFromCart = () => {};
 
   return (
