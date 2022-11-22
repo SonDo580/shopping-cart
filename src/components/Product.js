@@ -3,8 +3,12 @@ import React, { useState } from "react";
 export default function Product(props) {
   const { product } = props;
 
-  const { total, setTotal } = useState(product.price);
-  const { quantity, setQuantity } = useState(1);
+  const [total, setTotal] = useState(product.price);
+  const [quantity, setQuantity] = useState(0);
+
+  const changeQuantity = (amount) => {
+    setQuantity((prevQuantity) => prevQuantity + amount);
+  };
 
   return (
     <div>
@@ -12,9 +16,9 @@ export default function Product(props) {
       <h3>{product.name}</h3>
       <p>{total}</p>
       <p>
-        <button>-</button>
+        <button onClick={() => changeQuantity(-1)}>-</button>
         <span>{quantity}</span>
-        <button>+</button>
+        <button onClick={() => changeQuantity(1)}>+</button>
       </p>
       <button>Add to cart</button>
       <hr />
