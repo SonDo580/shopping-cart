@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import NavBar from "./components/NavBar";
 import List from "./components/List";
+import Cart from "./components/Cart";
 
 export default function App() {
   // Add and remove products logic
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="" element={<List />} />
           <Route path=":category" element={<List />} />
         </Route>
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );
