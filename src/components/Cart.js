@@ -2,13 +2,13 @@ import React from "react";
 import CartItem from "./CartItem";
 
 export default function Cart(props) {
-  const { chosenProducts, removeFromCart } = props;
+  const { chosenItems, removeFromCart } = props;
 
   return (
     <div>
       <h1>Your Cart</h1>
       <div className="cartItems">
-        {chosenProducts.map((item) => {
+        {chosenItems.map((item) => {
           return (
             <CartItem
               key={item.id}
