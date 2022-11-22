@@ -10,10 +10,10 @@ export default function Product(props) {
     <div>
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
-      <p>{product.price}</p>
+      <p>{total}</p>
       <p>
         <button>-</button>
-        <span>1</span>
+        <span>{quantity}</span>
         <button>+</button>
       </p>
       <button>Add to cart</button>
