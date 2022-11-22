@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Product(props) {
   const { product } = props;
+
+  const { total, setTotal } = useState(product.price);
+  const { quantity, setQuantity } = useState(1);
+
   return (
     <div>
       <img src={product.image} alt={product.name} />
