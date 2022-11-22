@@ -58,13 +58,17 @@ const products = [
   },
 ];
 
-export default function List() {
-  let { category } = useParams("category");
+export default function List(props) {
+  const { addToCart } = props;
+  const { category } = useParams("category");
+
   if (category === undefined) {
     return (
       <div>
         {products.map((product) => {
-          return <Product key={product.id} product={product} />;
+          return (
+            <Product addToCart={addToCart} key={product.id} product={product} />
+          );
         })}
       </div>
     );
@@ -74,7 +78,13 @@ export default function List() {
         {products
           .filter((product) => product.category === category)
           .map((product) => {
-            return <Product key={product.id} product={product} />;
+            return (
+              <Product
+                addToCart={addToCart}
+                key={product.id}
+                product={product}
+              />
+            );
           })}
       </div>
     );
