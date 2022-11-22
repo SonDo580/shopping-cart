@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function Product(props) {
-  const { product } = props;
+  const { product, addToCart } = props;
 
   const [total, setTotal] = useState(product.price);
   const [quantity, setQuantity] = useState(1);
@@ -24,7 +24,17 @@ export default function Product(props) {
         <span>{quantity}</span>
         <button onClick={() => changeQuantity(1)}>+</button>
       </p>
-      <button>Add to cart</button>
+      <button
+        onClick={() => {
+          const item = {
+            id: product.id,
+            quantity: quantity,
+          };
+          addToCart(item);
+        }}
+      >
+        Add to cart
+      </button>
       <hr />
     </div>
   );
