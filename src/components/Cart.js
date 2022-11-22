@@ -9,7 +9,13 @@ export default function Cart(props) {
       <h1>Your Cart</h1>
       <div className="cartItems">
         {chosenProducts.map((item) => {
-          return <CartItem removeFromCart={removeFromCart} />;
+          return (
+            <CartItem
+              key={item.id}
+              item={item}
+              removeFromCart={removeFromCart}
+            />
+          );
         })}
       </div>
     </div>
