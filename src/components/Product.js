@@ -26,10 +26,9 @@ export default function Product(props) {
       </p>
       <button
         onClick={() => {
-          const item = {
-            id: product.id,
-            quantity: quantity,
-          };
+          const item = { ...product };
+          item.total = total;
+          item.quantity = quantity;
           addToCart(item);
         }}
       >
