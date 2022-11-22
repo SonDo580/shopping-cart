@@ -8,10 +8,10 @@ import Cart from "./components/Cart";
 
 export default function App() {
   // Add and remove products logic
-  const [chosenProducts, setChosenProducts] = useState([]);
+  const [chosenItems, setChosenItems] = useState([]);
 
   const addToCart = (item) => {
-    setChosenProducts((prevChosenProducts) => [...prevChosenProducts, item]);
+    setChosenItems((prevChosenItems) => [...prevChosenItems, item]);
   };
   const removeFromCart = () => {};
 
@@ -27,10 +27,7 @@ export default function App() {
         <Route
           path="/cart"
           element={
-            <Cart
-              chosenProducts={chosenProducts}
-              removeFromCart={removeFromCart}
-            />
+            <Cart chosenItems={chosenItems} removeFromCart={removeFromCart} />
           }
         />
       </Routes>
