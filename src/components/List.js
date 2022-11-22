@@ -41,7 +41,7 @@ const products = [
     category: "mammal",
     name: "tiger",
     price: "$150",
-    image: dinosaurImg,
+    image: leopardImg,
   },
   {
     id: 6,
