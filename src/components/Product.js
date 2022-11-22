@@ -7,6 +7,9 @@ export default function Product(props) {
   const [quantity, setQuantity] = useState(1);
 
   const changeQuantity = (amount) => {
+    if (quantity === 1 && amount === -1) {
+      return;
+    }
     setQuantity((prevQuantity) => prevQuantity + amount);
     setTotal((prevTotal) => prevTotal + amount * product.price);
   };
