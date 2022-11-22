@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import Product from "./Product";
@@ -59,6 +59,13 @@ const products = [
 ];
 
 export default function List() {
+  // Add and remove products logic
+  const [chosenProducts, setChosenProducts] = useState([]);
+
+  const addToCart = () => {};
+  const removeFromCart = () => {};
+
+  // Rendering
   let { category } = useParams("category");
   if (category === undefined) {
     return (
