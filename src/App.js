@@ -29,7 +29,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />}>
-          <Route path="" element={<List addToCart={addToCart} />} />
+          <Route
+            path=""
+            element={<List chosenItems={chosenItems} addToCart={addToCart} />}
+          />
           <Route
             path=":category"
             element={<List chosenItems={chosenItems} addToCart={addToCart} />}
