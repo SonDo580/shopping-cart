@@ -48,6 +48,7 @@ export default function App() {
             <Cart chosenItems={chosenItems} removeFromCart={removeFromCart} />
           }
         />
+        <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>
     </BrowserRouter>
   );
