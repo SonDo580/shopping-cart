@@ -36,7 +36,7 @@ export default function CartItem(props) {
       </p>
       <button
         onClick={() => {
-          removeFromCart();
+          removeFromCart(item.id);
         }}
       >
         Remove from cart
