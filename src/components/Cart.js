@@ -11,7 +11,7 @@ export default function Cart(props) {
     <div>
       <div className="head">
         <h1>Your Cart</h1>
-        <strong>Total: {total}</strong>
+        <strong>Total: ${total}</strong>
         <button>Continue buying</button>
         <button>Check out</button>
       </div>
