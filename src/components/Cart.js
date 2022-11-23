@@ -3,11 +3,9 @@ import CartItem from "./CartItem";
 
 export default function Cart(props) {
   const { chosenItems, removeFromCart } = props;
-  const [total, setTotal] = useState((chosenItems) =>
-    chosenItems.reduce((sum, item) => {
-      return sum + item.price;
-    }, 0)
-  );
+
+  const initialTotal = chosenItems.reduce((sum, item) => sum + item.price, 0);
+  const [total, setTotal] = useState(initialTotal);
 
   return (
     <div>
