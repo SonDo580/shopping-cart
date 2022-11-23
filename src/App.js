@@ -27,18 +27,6 @@ export default function App() {
     });
   };
 
-  const updateItemQuantity = (updateID, quantity) => {
-    setChosenItems((prevChosenItems) => {
-      let newChosenItems = [...prevChosenItems];
-      for (let chosenItem of newChosenItems) {
-        if (chosenItem.id === updateID) {
-          chosenItem.quantity = quantity;
-        }
-        return newChosenItems;
-      }
-    });
-  };
-
   return (
     <BrowserRouter>
       <NavBar />
@@ -57,11 +45,7 @@ export default function App() {
         <Route
           path="/cart"
           element={
-            <Cart
-              chosenItems={chosenItems}
-              removeFromCart={removeFromCart}
-              updateItemQuantity={updateItemQuantity}
-            />
+            <Cart chosenItems={chosenItems} removeFromCart={removeFromCart} />
           }
         />
       </Routes>
