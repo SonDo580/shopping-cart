@@ -11,14 +11,7 @@ export default function App() {
   const [chosenItems, setChosenItems] = useState([]);
 
   const addToCart = (item) => {
-    setChosenItems((prevChosenItems) => {
-      for (let chosenItem of prevChosenItems) {
-        if (chosenItem.id === item.id) {
-          return prevChosenItems;
-        }
-      }
-      return [...prevChosenItems, item];
-    });
+    setChosenItems((prevChosenItems) => [...prevChosenItems, item]);
   };
 
   const removeFromCart = (deleteID) => {
