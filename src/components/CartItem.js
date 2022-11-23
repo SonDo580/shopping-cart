@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function CartItem(props) {
   const { item, removeFromCart } = props;
 
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(item.quantity);
 
   const changeQuantityByOne = (amount) => {
     if (quantity === 1 && amount === -1) {
