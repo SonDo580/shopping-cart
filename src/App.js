@@ -7,7 +7,6 @@ import List from "./components/List";
 import Cart from "./components/Cart";
 
 export default function App() {
-  // Add and remove products logic
   const [chosenItems, setChosenItems] = useState([]);
 
   const initialTotal = chosenItems.reduce((sum, item) => sum + item.price, 0);
@@ -22,7 +21,7 @@ export default function App() {
     changeTotal(item.price);
   };
 
-  const removeFromCart = (deleteID) => {
+  const removeFromCart = (deleteID, totalRemove) => {
     setChosenItems((prevChosenItems) => {
       for (let i = 0; i < prevChosenItems.length; i++) {
         if (prevChosenItems[i].id === deleteID) {
@@ -33,6 +32,8 @@ export default function App() {
         }
       }
     });
+
+    changeTotal(-totalRemove);
   };
 
   return (
