@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function CartItem(props) {
-  const { item, removeFromCart } = props;
+  const { item, removeFromCart, updateItemQuantity } = props;
 
   const [quantity, setQuantity] = useState(item.quantity);
+
+  // Before navigate to another page, update the item (in chosenItems list)
+  useEffect(() => {
+    return () => {
+      updateItemQuantity(item.id, quantity);
+    };
+  }, []);
 
   const changeQuantityByOne = (amount) => {
     if (quantity === 1 && amount === -1) {
