@@ -9,7 +9,7 @@ export default function CartItem(props) {
     if (quantity === 1 && amount === -1) {
       return;
     }
-    // changeTotal(item.price * amount);
+    changeTotal(item.price * amount);
     setQuantity((prevQuantity) => prevQuantity + amount);
   };
 
