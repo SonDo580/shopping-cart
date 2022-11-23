@@ -3,7 +3,6 @@ import React, { useState } from "react";
 export default function CartItem(props) {
   const { item, removeFromCart } = props;
 
-  const [total, setTotal] = useState(item.price);
   const [quantity, setQuantity] = useState(1);
 
   const changeQuantityByOne = (amount) => {
@@ -11,19 +10,26 @@ export default function CartItem(props) {
       return;
     }
     setQuantity((prevQuantity) => prevQuantity + amount);
-    setTotal((prevTotal) => prevTotal + amount * item.price);
   };
 
   const changeQuantity = (event) => {
-    setQuantity(event.target.value);
-    setTotal(event.target.value * item.price);
+    // if (event.tartget === "") {
+    //   setQuantity(0);
+    //   return;
+    // }
+    // let { value } = event.target;
+    // if (value !== 0 && (!/^[0-9]$/.test(value) || Number(value) < 1)) {
+    //   alert("Please enter a positive integer");
+    //   return;
+    // }
+    // setQuantity(Number(value));
   };
 
   return (
     <div>
       <img src={item.image} alt={item.name} />
       <h3>{item.name}</h3>
-      <p>{`${item.unit}${total}`}</p>
+      <p>{`${item.unit}${quantity * item.price}`}</p>
       <p>
         <button onClick={() => changeQuantityByOne(-1)}>-</button>
         <input value={quantity} onChange={changeQuantity} />
