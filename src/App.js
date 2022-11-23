@@ -21,7 +21,18 @@ export default function App() {
     });
   };
 
-  const removeFromCart = () => {};
+  const removeFromCart = (deleteID) => {
+    setChosenItems((prevChosenItems) => {
+      for (let i = 0; i < prevChosenItems.length; i++) {
+        if (prevChosenItems[i].id === deleteID) {
+          return [
+            ...prevChosenItems.slice(0, i),
+            ...prevChosenItems.slice(i + 1),
+          ];
+        }
+      }
+    });
+  };
 
   return (
     <BrowserRouter>
