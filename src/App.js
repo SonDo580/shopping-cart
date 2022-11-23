@@ -57,7 +57,11 @@ export default function App() {
         <Route
           path="/cart"
           element={
-            <Cart chosenItems={chosenItems} removeFromCart={removeFromCart} />
+            <Cart
+              chosenItems={chosenItems}
+              removeFromCart={removeFromCart}
+              updateItemQuantity={updateItemQuantity}
+            />
           }
         />
       </Routes>
