@@ -10,7 +10,7 @@ export default function CartItem(props) {
     return () => {
       updateItemQuantity(item.id, quantity);
     };
-  }, []);
+  });
 
   const changeQuantityByOne = (amount) => {
     if (quantity === 1 && amount === -1) {
