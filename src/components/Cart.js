@@ -18,6 +18,10 @@ export default function Cart(props) {
           );
         })}
       </div>
+      <div className="buttons">
+        <button>Continue buying</button>
+        <button>Check out</button>
+      </div>
     </div>
   );
 }
