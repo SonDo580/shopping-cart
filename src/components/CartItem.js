@@ -28,7 +28,7 @@ export default function CartItem(props) {
     <div>
       <img src={item.image} alt={item.name} />
       <h3>{item.name}</h3>
-      <p>{`${item.unit}${quantity * item.price}`}</p>
+      <p>{`$${quantity * item.price}`}</p>
       <p>
         <button onClick={() => changeQuantityByOne(-1)}>-</button>
         <input value={quantity} onChange={changeQuantity} />

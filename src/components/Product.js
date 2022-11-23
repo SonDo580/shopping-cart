@@ -7,7 +7,7 @@ export default function Product(props) {
     <div>
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
-      <p>{`${product.unit}${product.price}`}</p>
+      <p>{`$${product.price}`}</p>
       <button
         onClick={() => {
           for (let chosenItem of chosenItems) {

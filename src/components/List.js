@@ -13,7 +13,6 @@ const products = [
     category: "reptile",
     name: "t-rex",
     price: 100,
-    unit: "$",
     image: dinosaurImg,
   },
   {
@@ -21,7 +20,6 @@ const products = [
     category: "mammal",
     name: "leopard",
     price: 120,
-    unit: "$",
     image: leopardImg,
   },
   {
@@ -29,7 +27,6 @@ const products = [
     category: "insect",
     name: "dragonfly",
     price: 110,
-    unit: "$",
     image: mosquitoImg,
   },
   {
@@ -37,7 +34,6 @@ const products = [
     category: "reptile",
     name: "spinosaurous",
     price: 200,
-    unit: "$",
     image: dinosaurImg,
   },
   {
@@ -45,7 +41,6 @@ const products = [
     category: "mammal",
     name: "tiger",
     price: 150,
-    unit: "$",
     image: leopardImg,
   },
   {
@@ -53,7 +48,6 @@ const products = [
     category: "insect",
     name: "mosquito",
     price: 180,
-    unit: "$",
     image: mosquitoImg,
   },
 ];
