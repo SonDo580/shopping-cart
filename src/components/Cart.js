@@ -7,6 +7,10 @@ export default function Cart(props) {
   const initialTotal = chosenItems.reduce((sum, item) => sum + item.price, 0);
   const [total, setTotal] = useState(initialTotal);
 
+  const changeTotal = (amount) => {
+    setTotal((prevTotal) => prevTotal + amount);
+  };
+
   return (
     <div>
       <div className="head">
@@ -23,6 +27,7 @@ export default function Cart(props) {
               key={item.id}
               item={item}
               removeFromCart={removeFromCart}
+              changeTotal={changeTotal}
             />
           );
         })}
