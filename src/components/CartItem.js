@@ -13,16 +13,15 @@ export default function CartItem(props) {
   };
 
   const changeQuantity = (event) => {
-    // if (event.tartget === "") {
-    //   setQuantity(0);
-    //   return;
-    // }
-    // let { value } = event.target;
-    // if (value !== 0 && (!/^[0-9]$/.test(value) || Number(value) < 1)) {
-    //   alert("Please enter a positive integer");
-    //   return;
-    // }
-    // setQuantity(Number(value));
+    if (event.tartget === "") {
+      setQuantity(0);
+      return;
+    }
+
+    let { value } = event.target;
+    if (!isNaN(Number(value))) {
+      setQuantity(Number(value));
+    }
   };
 
   return (
