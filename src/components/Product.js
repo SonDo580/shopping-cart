@@ -10,13 +10,14 @@ export default function Product(props) {
       <p>{`${product.unit}${product.price}`}</p>
       <button
         onClick={() => {
-          for (let item of chosenItems) {
-            if (item.id === product.id) {
+          for (let chosenItem of chosenItems) {
+            if (chosenItem.id === product.id) {
               alert("You already chose this product!");
               return;
             }
           }
-          addToCart(product);
+          const item = { ...product, quantity: 1 };
+          addToCart(item);
         }}
       >
         Add to cart
