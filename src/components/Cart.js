@@ -6,15 +6,13 @@ export default function Cart(props) {
 
   return (
     <div>
-      <h1>Your Cart</h1>
-
-      <div className="summary">
+      <div className="head">
+        <h1>Your Cart</h1>
         <strong>Total: {}</strong>
         <button>Continue buying</button>
         <button>Check out</button>
-        <hr />
       </div>
-
+      <hr />
       <div className="cartItems">
         {chosenItems.map((item) => {
           return (
