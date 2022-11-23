@@ -14,9 +14,7 @@ export default function App() {
     setChosenItems((prevChosenItems) => {
       for (let chosenItem of prevChosenItems) {
         if (chosenItem.id === item.id) {
-          chosenItem.quantity += item.quantity;
-          chosenItem.total += item.total;
-          return [...prevChosenItems];
+          return prevChosenItems;
         }
       }
       return [...prevChosenItems, item];
