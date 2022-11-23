@@ -17,6 +17,7 @@ export default function App() {
 
   const addToCart = (item) => {
     setChosenItems((prevChosenItems) => [...prevChosenItems, item]);
+    setTotal((prevTotal) => prevTotal + item.price);
   };
 
   const removeFromCart = (deleteID) => {
