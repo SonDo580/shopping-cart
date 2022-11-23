@@ -3,8 +3,8 @@ import React, { useState } from "react";
 export default function CartItem(props) {
   const { item, removeFromCart } = props;
 
-  const [total, setTotal] = useState(item.total);
-  const [quantity, setQuantity] = useState(item.quantity);
+  const [total, setTotal] = useState(item.price);
+  const [quantity, setQuantity] = useState(1);
 
   const changeQuantity = (amount) => {
     if (quantity === 1 && amount === -1) {
