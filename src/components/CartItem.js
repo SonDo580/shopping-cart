@@ -14,6 +14,11 @@ export default function CartItem(props) {
     setTotal((prevTotal) => prevTotal + amount * item.price);
   };
 
+  const changeQuantity = (event) => {
+    setQuantity(event.target.value);
+    setTotal(event.target.value * item.price);
+  };
+
   return (
     <div>
       <img src={item.image} alt={item.name} />
@@ -21,7 +26,7 @@ export default function CartItem(props) {
       <p>{`${item.unit}${total}`}</p>
       <p>
         <button onClick={() => changeQuantityByOne(-1)}>-</button>
-        <input value={quantity} />
+        <input value={quantity} onChange={changeQuantity} />
         <button onClick={() => changeQuantityByOne(1)}>+</button>
       </p>
       <button
