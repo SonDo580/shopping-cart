@@ -13,11 +13,13 @@ export default function App() {
   const initialTotal = chosenItems.reduce((sum, item) => sum + item.price, 0);
   const [total, setTotal] = useState(initialTotal);
 
-  const changeTotal = (amount) => {};
+  const changeTotal = (amount) => {
+    setTotal((prevTotal) => prevTotal + amount);
+  };
 
   const addToCart = (item) => {
     setChosenItems((prevChosenItems) => [...prevChosenItems, item]);
-    setTotal((prevTotal) => prevTotal + item.price);
+    changeTotal(item.price);
   };
 
   const removeFromCart = (deleteID) => {
