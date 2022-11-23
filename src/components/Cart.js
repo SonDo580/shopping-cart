@@ -1,15 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import CartItem from "./CartItem";
 
 export default function Cart(props) {
-  const { chosenItems, removeFromCart } = props;
-
-  const initialTotal = chosenItems.reduce((sum, item) => sum + item.price, 0);
-  const [total, setTotal] = useState(initialTotal);
-
-  const changeTotal = (amount) => {
-    setTotal((prevTotal) => prevTotal + amount);
-  };
+  const { chosenItems, removeFromCart, total, changeTotal } = props;
 
   return (
     <div>

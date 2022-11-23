@@ -10,6 +10,11 @@ export default function App() {
   // Add and remove products logic
   const [chosenItems, setChosenItems] = useState([]);
 
+  const initialTotal = chosenItems.reduce((sum, item) => sum + item.price, 0);
+  const [total, setTotal] = useState(initialTotal);
+
+  const changeTotal = (amount) => {};
+
   const addToCart = (item) => {
     setChosenItems((prevChosenItems) => [...prevChosenItems, item]);
   };
@@ -45,7 +50,12 @@ export default function App() {
         <Route
           path="/cart"
           element={
-            <Cart chosenItems={chosenItems} removeFromCart={removeFromCart} />
+            <Cart
+              chosenItems={chosenItems}
+              removeFromCart={removeFromCart}
+              total={total}
+              changeTotal={changeTotal}
+            />
           }
         />
         <Route path="*" element={<h1>Page Not Found</h1>} />

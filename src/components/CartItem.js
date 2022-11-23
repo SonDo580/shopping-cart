@@ -9,18 +9,20 @@ export default function CartItem(props) {
     if (quantity === 1 && amount === -1) {
       return;
     }
-    changeTotal(item.price * amount);
+    // changeTotal(item.price * amount);
     setQuantity((prevQuantity) => prevQuantity + amount);
   };
 
   const changeQuantity = (event) => {
     if (event.tartget === "") {
+      // changeTotal(-item.price);
       setQuantity(0);
       return;
     }
 
     let { value } = event.target;
     if (!isNaN(Number(value))) {
+      // changeTotal((value - 1) * item.price);
       setQuantity(Number(value));
     }
   };
