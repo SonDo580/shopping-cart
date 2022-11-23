@@ -8,6 +8,13 @@ export default function Cart(props) {
     <div>
       <h1>Your Cart</h1>
 
+      <div className="summary">
+        <strong>Total: {}</strong>
+        <button>Continue buying</button>
+        <button>Check out</button>
+        <hr />
+      </div>
+
       <div className="cartItems">
         {chosenItems.map((item) => {
           return (
@@ -18,13 +25,6 @@ export default function Cart(props) {
             />
           );
         })}
-      </div>
-
-      <strong>Total: {}</strong>
-
-      <div className="buttons">
-        <button>Continue buying</button>
-        <button>Check out</button>
       </div>
     </div>
   );
