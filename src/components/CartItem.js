@@ -21,7 +21,7 @@ export default function CartItem(props) {
       <p>{`${item.unit}${total}`}</p>
       <p>
         <button onClick={() => changeQuantity(-1)}>-</button>
-        <span>{quantity}</span>
+        <input value={quantity} />
         <button onClick={() => changeQuantity(1)}>+</button>
       </p>
       <button
