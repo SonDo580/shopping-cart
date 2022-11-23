@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function Product(props) {
-  const { product, addToCart } = props;
+  const { chosenItems, product, addToCart } = props;
 
   const [total, setTotal] = useState(product.price);
   const [quantity, setQuantity] = useState(1);
@@ -26,10 +26,13 @@ export default function Product(props) {
       </p>
       <button
         onClick={() => {
-          const item = { ...product };
-          item.total = total;
-          item.quantity = quantity;
-          addToCart(item);
+          for (let item of chosenItems) {
+            if (item.id === product.id) {
+              alert("You already chose this product!");
+              return;
+            }
+          }
+          addToCart(product);
         }}
       >
         Add to cart
