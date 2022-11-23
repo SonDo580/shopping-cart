@@ -2,7 +2,7 @@ import React from "react";
 import CartItem from "./CartItem";
 
 export default function Cart(props) {
-  const { chosenItems, removeFromCart } = props;
+  const { chosenItems, removeFromCart, updateItemQuantity } = props;
 
   return (
     <div>
@@ -20,6 +20,7 @@ export default function Cart(props) {
               key={item.id}
               item={item}
               removeFromCart={removeFromCart}
+              updateItemQuantity={updateItemQuantity}
             />
           );
         })}
