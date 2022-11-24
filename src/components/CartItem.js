@@ -1,7 +1,12 @@
 import React from "react";
 
 export default function CartItem(props) {
-  const { item, removeFromCart /* changeTotal */ } = props;
+  const {
+    item,
+    removeFromCart,
+    changeQuantityByOne,
+    updateQuantity /* changeTotal */,
+  } = props;
 
   return (
     <div>
@@ -9,9 +14,14 @@ export default function CartItem(props) {
       <h3>{item.name}</h3>
       <p>{`$${item.quantity * item.price}`}</p>
       <p>
-        <button onClick={() => changeQuantityByOne(-1)}>-</button>
-        <input value={quantity} onChange={changeQuantity} />
-        <button onClick={() => changeQuantityByOne(1)}>+</button>
+        <button onClick={() => changeQuantityByOne(item.id, -1)}>-</button>
+        <input
+          value={item.quantity}
+          onChange={(event) => {
+            updateQuantity(item.id, event.target.value);
+          }}
+        />
+        <button onClick={() => changeQuantityByOne(item.id, 1)}>+</button>
       </p>
       <button
         onClick={() => {
