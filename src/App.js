@@ -53,14 +53,13 @@ export default function App() {
 
   const removeFromCart = (deleteID, totalRemove) => {
     setChosenItems((prevChosenItems) => {
-      for (let i = 0; i < prevChosenItems.length; i++) {
-        if (prevChosenItems[i].id === deleteID) {
-          return [
-            ...prevChosenItems.slice(0, i),
-            ...prevChosenItems.slice(i + 1),
-          ];
-        }
-      }
+      let deleteIndex = prevChosenItems.findIndex(
+        (item) => item.id === deleteID
+      );
+      return [
+        ...prevChosenItems.slice(0, deleteIndex),
+        ...prevChosenItems.slice(deleteIndex + 1),
+      ];
     });
 
     // changeTotal(-totalRemove);
