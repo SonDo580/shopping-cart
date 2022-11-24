@@ -18,7 +18,16 @@ export default function CartItem(props) {
         <input
           value={item.quantity}
           onChange={(event) => {
-            updateQuantity(item.id, event.target.value);
+            const { value } = event.target;
+
+            if (value === "") {
+              updateQuantity(item.id, 0);
+              return;
+            }
+
+            if (/^[0-9]$/.test(value)) {
+              updateQuantity(item.id, Number(value));
+            }
           }}
         />
         <button onClick={() => changeQuantityByOne(item.id, 1)}>+</button>
