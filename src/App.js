@@ -27,7 +27,7 @@ export default function App() {
       let updateItem = newChosenItems.find((item) => item.id === updateID);
 
       if (updateItem.quantity === 0 && amount === -1) {
-        return;
+        return newChosenItems;
       }
       updateItem.quantity += amount;
       return newChosenItems;
