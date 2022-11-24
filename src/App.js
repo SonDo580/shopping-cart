@@ -38,6 +38,19 @@ export default function App() {
     });
   };
 
+  const updateQuantity = (updateID, newQuantity) => {
+    setChosenItems((prevChosenItems) => {
+      let newChosenItems = [...prevChosenItems];
+      for (let item of newChosenItems) {
+        if (item.id === updateID) {
+          item.quantity = newQuantity;
+          break;
+        }
+      }
+      return newChosenItems;
+    });
+  };
+
   const removeFromCart = (deleteID, totalRemove) => {
     setChosenItems((prevChosenItems) => {
       for (let i = 0; i < prevChosenItems.length; i++) {
