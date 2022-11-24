@@ -5,7 +5,6 @@ export default function Cart(props) {
   const {
     chosenItems,
     removeFromCart,
-    changeQuantityByOne,
     updateQuantity /* total, changeTotal */,
   } = props;
 
@@ -26,7 +25,6 @@ export default function Cart(props) {
               key={item.id}
               item={item}
               removeFromCart={removeFromCart}
-              changeQuantityByOne={changeQuantityByOne}
               updateQuantity={updateQuantity}
               // changeTotal={changeTotal}
             />

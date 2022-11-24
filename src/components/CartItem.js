@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 
 export default function CartItem(props) {
-  const {
-    item,
-    removeFromCart,
-    changeQuantityByOne,
-    updateQuantity /* changeTotal */,
-  } = props;
+  const { item, removeFromCart, updateQuantity /* changeTotal */ } = props;
 
   const [quantity, setQuantity] = useState(item.quantity);
+
+  const changeQuantityByOne = (amount) => {
+    setQuantity((prevQuantity) => prevQuantity + amount);
+  };
 
   return (
     <div>
       <img src={item.image} alt={item.name} />
       <h3>{item.name}</h3>
-      <p>{`$${item.quantity * item.price}`}</p>
+      <p>{`$${quantity * item.price}`}</p>
       <p>
-        <button onClick={() => changeQuantityByOne(item.id, -1)}>-</button>
+        <button onClick={() => changeQuantityByOne(-1)}>-</button>
         <input
           value={quantity}
           onChange={(event) => {
@@ -32,7 +31,7 @@ export default function CartItem(props) {
             }
           }}
         />
-        <button onClick={() => changeQuantityByOne(item.id, 1)}>+</button>
+        <button onClick={() => changeQuantityByOne(1)}>+</button>
       </p>
       <button
         onClick={() => {

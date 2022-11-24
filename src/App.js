@@ -21,19 +21,6 @@ export default function App() {
     // changeTotal(item.price);
   };
 
-  const changeQuantityByOne = (updateID, amount) => {
-    setChosenItems((prevChosenItems) => {
-      let newChosenItems = [...prevChosenItems];
-      let updateItem = newChosenItems.find((item) => item.id === updateID);
-
-      if (updateItem.quantity === 0 && amount === -1) {
-        return newChosenItems;
-      }
-      updateItem.quantity += amount;
-      return newChosenItems;
-    });
-  };
-
   const updateQuantity = (updateID, newQuantity) => {
     setChosenItems((prevChosenItems) => {
       let newChosenItems = [...prevChosenItems];
@@ -78,7 +65,6 @@ export default function App() {
             <Cart
               chosenItems={chosenItems}
               removeFromCart={removeFromCart}
-              changeQuantityByOne={changeQuantityByOne}
               updateQuantity={updateQuantity}
               // total={total}
               // changeTotal={changeTotal}
