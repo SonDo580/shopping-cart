@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function CartItem(props) {
-  const { item, removeFromCart, changeTotal } = props;
+  const { item, removeFromCart /* changeTotal */ } = props;
 
   const [quantity, setQuantity] = useState(item.quantity);
 
@@ -9,7 +9,7 @@ export default function CartItem(props) {
     if (quantity === 1 && amount === -1) {
       return;
     }
-    changeTotal(item.price * amount);
+    // changeTotal(item.price * amount);
     setQuantity((prevQuantity) => prevQuantity + amount);
   };
 

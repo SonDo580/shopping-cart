@@ -2,13 +2,14 @@ import React from "react";
 import CartItem from "./CartItem";
 
 export default function Cart(props) {
-  const { chosenItems, removeFromCart, total, changeTotal } = props;
+  const { chosenItems, removeFromCart /* total, changeTotal */ } = props;
 
   return (
     <div>
       <div className="head">
         <h1>Your Cart</h1>
-        <strong>Total: ${total}</strong>
+        {/* <strong>Total: ${total}</strong> */}
+        <strong>Total: $???</strong>
         <button>Continue buying</button>
         <button>Check out</button>
       </div>
@@ -20,7 +21,7 @@ export default function Cart(props) {
               key={item.id}
               item={item}
               removeFromCart={removeFromCart}
-              changeTotal={changeTotal}
+              // changeTotal={changeTotal}
             />
           );
         })}

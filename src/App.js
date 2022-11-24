@@ -9,16 +9,16 @@ import Cart from "./components/Cart";
 export default function App() {
   const [chosenItems, setChosenItems] = useState([]);
 
-  const initialTotal = chosenItems.reduce((sum, item) => sum + item.price, 0);
-  const [total, setTotal] = useState(initialTotal);
+  // const initialTotal = chosenItems.reduce((sum, item) => sum + item.price, 0);
+  // const [total, setTotal] = useState(initialTotal);
 
-  const changeTotal = (amount) => {
-    setTotal((prevTotal) => prevTotal + amount);
-  };
+  // const changeTotal = (amount) => {
+  //   setTotal((prevTotal) => prevTotal + amount);
+  // };
 
   const addToCart = (item) => {
     setChosenItems((prevChosenItems) => [...prevChosenItems, item]);
-    changeTotal(item.price);
+    // changeTotal(item.price);
   };
 
   const removeFromCart = (deleteID, totalRemove) => {
@@ -33,7 +33,7 @@ export default function App() {
       }
     });
 
-    changeTotal(-totalRemove);
+    // changeTotal(-totalRemove);
   };
 
   return (
@@ -57,8 +57,8 @@ export default function App() {
             <Cart
               chosenItems={chosenItems}
               removeFromCart={removeFromCart}
-              total={total}
-              changeTotal={changeTotal}
+              // total={total}
+              // changeTotal={changeTotal}
             />
           }
         />
