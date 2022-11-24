@@ -24,16 +24,12 @@ export default function App() {
   const changeQuantityByOne = (updateID, amount) => {
     setChosenItems((prevChosenItems) => {
       let newChosenItems = [...prevChosenItems];
-      for (let item of newChosenItems) {
-        if (item.id === updateID) {
-          if (item.quantity === 0 && amount === -1) {
-            return;
-          }
+      let updateItem = newChosenItems.find((item) => item.id === updateID);
 
-          item.quantity += amount;
-          break;
-        }
+      if (updateItem.quantity === 0 && amount === -1) {
+        return;
       }
+      updateItem.quantity += amount;
       return newChosenItems;
     });
   };
@@ -41,12 +37,8 @@ export default function App() {
   const updateQuantity = (updateID, newQuantity) => {
     setChosenItems((prevChosenItems) => {
       let newChosenItems = [...prevChosenItems];
-      for (let item of newChosenItems) {
-        if (item.id === updateID) {
-          item.quantity = newQuantity;
-          break;
-        }
-      }
+      let updateItem = newChosenItems.find((item) => item.id === updateID);
+      updateItem.quantity = newQuantity;
       return newChosenItems;
     });
   };
