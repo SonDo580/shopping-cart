@@ -6,7 +6,12 @@ export default function CartItem(props) {
   const [quantity, setQuantity] = useState(item.quantity);
 
   const changeQuantityByOne = (amount) => {
-    setQuantity((prevQuantity) => prevQuantity + amount);
+    setQuantity((prevQuantity) => {
+      if (prevQuantity === 0 && amount === -1) {
+        return prevQuantity;
+      }
+      return prevQuantity + amount;
+    });
   };
 
   return (
