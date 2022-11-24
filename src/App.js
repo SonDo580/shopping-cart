@@ -78,6 +78,8 @@ export default function App() {
             <Cart
               chosenItems={chosenItems}
               removeFromCart={removeFromCart}
+              changeQuantityByOne={changeQuantityByOne}
+              updateQuantity={updateQuantity}
               // total={total}
               // changeTotal={changeTotal}
             />
