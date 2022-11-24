@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function CartItem(props) {
   const {
@@ -8,6 +8,8 @@ export default function CartItem(props) {
     updateQuantity /* changeTotal */,
   } = props;
 
+  const [quantity, setQuantity] = useState(item.quantity);
+
   return (
     <div>
       <img src={item.image} alt={item.name} />
@@ -16,7 +18,7 @@ export default function CartItem(props) {
       <p>
         <button onClick={() => changeQuantityByOne(item.id, -1)}>-</button>
         <input
-          value={item.quantity}
+          value={quantity}
           onChange={(event) => {
             const { value } = event.target;
 
