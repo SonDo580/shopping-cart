@@ -21,12 +21,16 @@ export default function App() {
     // changeTotal(item.price);
   };
 
-  const changeQuantityByOne = (updateID, quantity) => {
+  const changeQuantityByOne = (updateID, amount) => {
     setChosenItems((prevChosenItems) => {
       let newChosenItems = [...prevChosenItems];
       for (let item of newChosenItems) {
         if (item.id === updateID) {
-          item.quantity = quantity;
+          if (item.quantity === 0 && amount === -1) {
+            return;
+          }
+
+          item.quantity += amount;
           break;
         }
       }
