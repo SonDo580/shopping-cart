@@ -28,7 +28,8 @@ export default function CartItem(props) {
       </p>
       <button
         onClick={() => {
-          removeFromCart(item.id, item.quantity * item.price);
+          const totalRemove = item.quantity * item.price;
+          removeFromCart(item.id, totalRemove);
         }}
       >
         Remove from cart
