@@ -14,6 +14,7 @@ const products = [
     name: "t-rex",
     price: 100,
     image: dinosaurImg,
+    chosen: false,
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const products = [
     name: "leopard",
     price: 120,
     image: leopardImg,
+    chosen: false,
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const products = [
     name: "dragonfly",
     price: 110,
     image: mosquitoImg,
+    chosen: false,
   },
   {
     id: 4,
@@ -35,6 +38,7 @@ const products = [
     name: "spinosaurous",
     price: 200,
     image: dinosaurImg,
+    chosen: false,
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ const products = [
     name: "tiger",
     price: 150,
     image: leopardImg,
+    chosen: false,
   },
   {
     id: 6,
@@ -49,6 +54,7 @@ const products = [
     name: "mosquito",
     price: 180,
     image: mosquitoImg,
+    chosen: false,
   },
 ];
 
