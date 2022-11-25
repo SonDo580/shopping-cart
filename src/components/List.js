@@ -67,7 +67,12 @@ export default function List(props) {
       <div>
         {products.map((product) => {
           return (
-            <Product addToCart={addToCart} key={product.id} product={product} />
+            <Product
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+              key={product.id}
+              product={product}
+            />
           );
         })}
       </div>
