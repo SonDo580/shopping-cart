@@ -11,10 +11,6 @@ export default function App() {
 
   const [total, setTotal] = useState(0);
 
-  const changeTotal = (amount) => {
-    setTotal((prevTotal) => prevTotal + amount);
-  };
-
   const addToCart = (item) => {
     setChosenItems((prevChosenItems) => [...prevChosenItems, item]);
   };
