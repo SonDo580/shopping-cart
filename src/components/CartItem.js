@@ -20,7 +20,7 @@ export default function CartItem(props) {
               return;
             }
 
-            if (/^[0-9]$/.test(value)) {
+            if (!isNaN(Number(value))) {
               updateQuantity(item.id, Number(value));
             }
           }}
