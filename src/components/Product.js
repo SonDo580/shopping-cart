@@ -9,10 +9,10 @@ export default function Product(props) {
       <h3>{product.name}</h3>
       <p>{`$${product.price}`}</p>
 
-      {chosen ? (
+      {product.chosen ? (
         <button
           onClick={() => {
-            setChosen(false);
+            setChosen(product.id, false);
             removeFromCart(product.id);
           }}
         >
@@ -21,7 +21,7 @@ export default function Product(props) {
       ) : (
         <button
           onClick={() => {
-            setChosen(true);
+            setChosen(product.id, true);
             const item = { ...product, quantity: 1 };
             addToCart(item);
           }}
