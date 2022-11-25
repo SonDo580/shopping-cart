@@ -17,7 +17,7 @@ export default function App() {
 
   const addToCart = (item) => {
     setChosenItems((prevChosenItems) => [...prevChosenItems, item]);
-    // changeTotal(item.price);
+    changeTotal(item.price);
   };
 
   const updateQuantity = (updateID, newQuantity) => {
