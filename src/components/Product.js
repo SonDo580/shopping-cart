@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function Product(props) {
-  const { product, addToCart } = props;
+  const { product, addToCart, removeFromCart } = props;
 
   const [chosen, setChosen] = useState(false);
 
@@ -15,6 +15,7 @@ export default function Product(props) {
         <button
           onClick={() => {
             setChosen(false);
+            removeFromCart(product.id);
           }}
         >
           Remove from cart
