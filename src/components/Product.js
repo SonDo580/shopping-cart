@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Product(props) {
-  const { product, addToCart } = props;
+  const { product, addToCart, chosenItems } = props;
 
   return (
     <div>

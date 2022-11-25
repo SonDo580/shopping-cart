@@ -53,7 +53,7 @@ const products = [
 ];
 
 export default function List(props) {
-  const { addToCart } = props;
+  const { addToCart, chosenItems } = props;
   const { category } = useParams("category");
 
   if (category === undefined) {
@@ -61,7 +61,12 @@ export default function List(props) {
       <div>
         {products.map((product) => {
           return (
-            <Product addToCart={addToCart} key={product.id} product={product} />
+            <Product
+              addToCart={addToCart}
+              chosenItems={chosenItems}
+              key={product.id}
+              product={product}
+            />
           );
         })}
       </div>
@@ -75,6 +80,7 @@ export default function List(props) {
             return (
               <Product
                 addToCart={addToCart}
+                chosenItems={chosenItems}
                 key={product.id}
                 product={product}
               />
