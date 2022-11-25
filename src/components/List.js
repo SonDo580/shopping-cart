@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import Product from "./Product";
@@ -7,7 +7,7 @@ import leopardImg from "../images/leopard.jpeg";
 import dinosaurImg from "../images/dinosaur.jpeg";
 import mosquitoImg from "../images/mosquito.jpeg";
 
-const products = [
+const originalProducts = [
   {
     id: 1,
     category: "reptile",
@@ -61,6 +61,8 @@ const products = [
 export default function List(props) {
   const { addToCart, removeFromCart } = props;
   const { category } = useParams("category");
+
+  const [products, setProducts] = useState(originalProducts);
 
   if (category === undefined) {
     return (
