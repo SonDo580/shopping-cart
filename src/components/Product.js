@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Product(props) {
-  const { product, addToCart, removeFromCart } = props;
-
-  const [chosen, setChosen] = useState(false);
+  const { product, addToCart, removeFromCart, setChosen } = props;
 
   return (
     <div>
