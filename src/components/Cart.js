@@ -18,7 +18,9 @@ export default function Cart(props) {
         <button>
           <Link to="/catalog">Continue buying</Link>
         </button>
-        <button>Check out</button>
+        <button onClick={() => alert("This feature is not available yet!")}>
+          Check out
+        </button>
       </div>
       <hr />
       <div className="cartItems">
