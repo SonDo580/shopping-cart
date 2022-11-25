@@ -3,18 +3,13 @@ import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 
 export default function Cart(props) {
-  const {
-    chosenItems,
-    removeFromCart,
-    updateQuantity /* total, changeTotal */,
-  } = props;
+  const { chosenItems, removeFromCart, updateQuantity, total } = props;
 
   return (
     <div>
       <div className="head">
         <h1>Your Cart</h1>
-        {/* <strong>Total: ${total}</strong> */}
-        <strong>Total: $???</strong>
+        <strong>Total: ${total}</strong>
         <button>
           <Link to="/catalog">Continue buying</Link>
         </button>
@@ -31,7 +26,6 @@ export default function Cart(props) {
               item={item}
               removeFromCart={removeFromCart}
               updateQuantity={updateQuantity}
-              // changeTotal={changeTotal}
             />
           );
         })}

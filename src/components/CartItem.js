@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function CartItem(props) {
-  const { item, removeFromCart, updateQuantity /* changeTotal */ } = props;
+  const { item, removeFromCart, updateQuantity } = props;
 
   return (
     <div>
