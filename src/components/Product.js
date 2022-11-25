@@ -1,7 +1,10 @@
 import React from "react";
 
 export default function Product(props) {
-  const { product, addToCart, removeFromCart } = props;
+  const { product, addToCart, removeFromCart, chosenItems } = props;
+
+  const isChosen =
+    chosenItems.findIndex((item) => item.id === product.id) !== -1;
 
   return (
     <div>
@@ -9,7 +12,7 @@ export default function Product(props) {
       <h3>{product.name}</h3>
       <p>{`$${product.price}`}</p>
 
-      {true ? (
+      {isChosen ? (
         <button
           onClick={() => {
             removeFromCart(product.id);
