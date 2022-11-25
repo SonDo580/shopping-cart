@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
 import Product from "./Product";
@@ -7,14 +7,13 @@ import leopardImg from "../images/leopard.jpeg";
 import dinosaurImg from "../images/dinosaur.jpeg";
 import mosquitoImg from "../images/mosquito.jpeg";
 
-const originalProducts = [
+const products = [
   {
     id: 1,
     category: "reptile",
     name: "t-rex",
     price: 100,
     image: dinosaurImg,
-    chosen: false,
   },
   {
     id: 2,
@@ -22,7 +21,6 @@ const originalProducts = [
     name: "leopard",
     price: 120,
     image: leopardImg,
-    chosen: false,
   },
   {
     id: 3,
@@ -30,7 +28,6 @@ const originalProducts = [
     name: "dragonfly",
     price: 110,
     image: mosquitoImg,
-    chosen: false,
   },
   {
     id: 4,
@@ -38,7 +35,6 @@ const originalProducts = [
     name: "spinosaurous",
     price: 200,
     image: dinosaurImg,
-    chosen: false,
   },
   {
     id: 5,
@@ -46,7 +42,6 @@ const originalProducts = [
     name: "tiger",
     price: 150,
     image: leopardImg,
-    chosen: false,
   },
   {
     id: 6,
@@ -54,39 +49,19 @@ const originalProducts = [
     name: "mosquito",
     price: 180,
     image: mosquitoImg,
-    chosen: false,
   },
 ];
 
 export default function List(props) {
-  const { addToCart, removeFromCart } = props;
+  const { addToCart } = props;
   const { category } = useParams("category");
-
-  const [products, setProducts] = useState(originalProducts);
-
-  const setChosen = (productID, chosen) => {
-    setProducts((prevProducts) => {
-      let newProducts = [...prevProducts];
-      let updateProduct = newProducts.find(
-        (product) => product.id === productID
-      );
-      updateProduct.chosen = chosen;
-      return newProducts;
-    });
-  };
 
   if (category === undefined) {
     return (
       <div>
         {products.map((product) => {
           return (
-            <Product
-              addToCart={addToCart}
-              removeFromCart={removeFromCart}
-              setChosen={setChosen}
-              key={product.id}
-              product={product}
-            />
+            <Product addToCart={addToCart} key={product.id} product={product} />
           );
         })}
       </div>
@@ -100,8 +75,6 @@ export default function List(props) {
             return (
               <Product
                 addToCart={addToCart}
-                removeFromCart={removeFromCart}
-                setChosen={setChosen}
                 key={product.id}
                 product={product}
               />
