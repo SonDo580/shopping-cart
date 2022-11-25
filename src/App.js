@@ -30,7 +30,7 @@ export default function App() {
     });
   };
 
-  const removeFromCart = (deleteID, totalRemove) => {
+  const removeFromCart = (deleteID) => {
     setChosenItems((prevChosenItems) => {
       let deleteIndex = prevChosenItems.findIndex(
         (item) => item.id === deleteID
