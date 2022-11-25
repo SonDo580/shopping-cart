@@ -64,6 +64,17 @@ export default function List(props) {
 
   const [products, setProducts] = useState(originalProducts);
 
+  const setChosen = (productID, chosen) => {
+    setProducts((prevProducts) => {
+      let newProducts = [...prevProducts];
+      let updateProduct = newProducts.find(
+        (product) => product.id === productID
+      );
+      updateProduct.chosen = chosen;
+      return newProducts;
+    });
+  };
+
   if (category === undefined) {
     return (
       <div>
@@ -72,6 +83,7 @@ export default function List(props) {
             <Product
               addToCart={addToCart}
               removeFromCart={removeFromCart}
+              setChosen={setChosen}
               key={product.id}
               product={product}
             />
@@ -89,6 +101,7 @@ export default function List(props) {
               <Product
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
+                setChosen={setChosen}
                 key={product.id}
                 product={product}
               />
