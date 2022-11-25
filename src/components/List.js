@@ -53,7 +53,7 @@ const products = [
 ];
 
 export default function List(props) {
-  const { addToCart, chosenItems } = props;
+  const { addToCart, removeFromCart, chosenItems } = props;
   const { category } = useParams("category");
 
   if (category === undefined) {
@@ -63,6 +63,7 @@ export default function List(props) {
           return (
             <Product
               addToCart={addToCart}
+              removeFromCart={removeFromCart}
               chosenItems={chosenItems}
               key={product.id}
               product={product}
@@ -80,6 +81,7 @@ export default function List(props) {
             return (
               <Product
                 addToCart={addToCart}
+                removeFromCart={removeFromCart}
                 chosenItems={chosenItems}
                 key={product.id}
                 product={product}
