@@ -29,7 +29,7 @@ export default function App() {
     });
   };
 
-  const removeFromCart = (deleteID) => {
+  const removeFromCart = (deleteID, totalRemove) => {
     setChosenItems((prevChosenItems) => {
       let deleteIndex = prevChosenItems.findIndex(
         (item) => item.id === deleteID
@@ -40,7 +40,7 @@ export default function App() {
       ];
     });
 
-    // changeTotal(-totalRemove);
+    changeTotal(-totalRemove);
   };
 
   return (
