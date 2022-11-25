@@ -17,7 +17,6 @@ export default function App() {
 
   const addToCart = (item) => {
     setChosenItems((prevChosenItems) => [...prevChosenItems, item]);
-    changeTotal(item.price);
   };
 
   const updateQuantity = (updateID, newQuantity) => {
@@ -29,7 +28,7 @@ export default function App() {
     });
   };
 
-  const removeFromCart = (deleteID, totalRemove) => {
+  const removeFromCart = (deleteID) => {
     setChosenItems((prevChosenItems) => {
       let deleteIndex = prevChosenItems.findIndex(
         (item) => item.id === deleteID
@@ -39,8 +38,6 @@ export default function App() {
         ...prevChosenItems.slice(deleteIndex + 1),
       ];
     });
-
-    changeTotal(-totalRemove);
   };
 
   return (
