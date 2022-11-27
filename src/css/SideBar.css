@@ -1,0 +1,31 @@
+aside {
+  min-width: 250px;
+  background-color: darkblue;
+}
+
+aside ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+aside li {
+  padding: 0;
+  padding-left: 30px;
+}
+
+aside li:hover {
+  background-color: yellow;
+}
+
+aside li:hover a {
+  color: black;
+}
+
+aside a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  padding-left: 20px;
+}
