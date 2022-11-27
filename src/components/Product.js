@@ -5,9 +5,10 @@ export default function Product(props) {
 
   const indexChosen = chosenItems.findIndex((item) => item.id === product.id);
 
-  // if (indexChosen) {
-  //   const item = chosenItems
-  // }
+  let item = null;
+  if (indexChosen !== -1) {
+    item = chosenItems[indexChosen];
+  }
 
   return (
     <div>
@@ -18,7 +19,8 @@ export default function Product(props) {
       {indexChosen !== -1 ? (
         <button
           onClick={() => {
-            removeFromCart(product.id);
+            const totalRemove = item.quantity * item.price;
+            removeFromCart(product.id, totalRemove);
           }}
         >
           Remove from cart
