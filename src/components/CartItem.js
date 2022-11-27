@@ -16,7 +16,8 @@ export default function CartItem(props) {
             const { value } = event.target;
 
             if (value === "") {
-              updateQuantity(item.id, 0);
+              const totalIncrease = -(item.quantity * item.price);
+              updateQuantity(item.id, 0, totalIncrease);
               return;
             }
 
