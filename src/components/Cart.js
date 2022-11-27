@@ -1,19 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
+import "../css/Cart.css";
 
 export default function Cart(props) {
   const { chosenItems, removeFromCart, updateQuantity, total } = props;
 
   return (
-    <div>
+    <div className="cart">
+      <h1>Your Cart</h1>
       <div className="head">
-        <h1>Your Cart</h1>
-        <strong>Total: ${total}</strong>
-        <button>
+        <strong>
+          Total: <span className="total">${total}</span>
+        </strong>
+        <button className="continue">
           <Link to="/catalog">Continue buying</Link>
         </button>
-        <button onClick={() => alert("This feature is not available yet!")}>
+        <button
+          className="checkout"
+          onClick={() => alert("This feature is not available yet!")}
+        >
           Check out
         </button>
       </div>
