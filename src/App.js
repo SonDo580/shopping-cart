@@ -44,11 +44,10 @@ export default function App() {
 
   return (
     <div className="app">
-      <BrowserRouter>
+      <BrowserRouter basename="/shopping-cart">
         <NavBar numChosenItems={chosenItems.length} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/shopping-cart" element={<Home />} />
           <Route path="/catalog" element={<Catalog />}>
             <Route
               path=""
