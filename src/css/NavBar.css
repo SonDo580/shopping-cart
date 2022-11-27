@@ -1,4 +1,22 @@
 nav {
   display: flex;
   justify-content: space-around;
+  background-color: black;
+  padding: 15px 0;
+}
+
+nav a {
+  color: lightgreen;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav .logo {
+  font-size: 2.5rem;
+  color: yellow;
 }
