@@ -58,7 +58,7 @@ export default function List(props) {
 
   if (category === undefined) {
     return (
-      <div>
+      <div className="catalog">
         {products.map((product) => {
           return (
             <Product
@@ -74,7 +74,7 @@ export default function List(props) {
     );
   } else {
     return (
-      <div>
+      <div className="catalog">
         {products
           .filter((product) => product.category === category)
           .map((product) => {

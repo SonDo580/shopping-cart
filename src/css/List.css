@@ -1,0 +1,45 @@
+.catalog {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+}
+
+.product {
+  padding: 10px;
+  border: 3px solid blue;
+  border-radius: 10px;
+}
+
+.product img {
+  width: 100%;
+  aspect-ratio: 5 / 3;
+}
+
+.product button {
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+
+.product button:hover {
+  cursor: pointer;
+}
+
+.product button.add {
+  background-color: blueviolet;
+}
+
+.product button.add:hover {
+  background-color: blue;
+}
+
+.product button.remove {
+  background-color: darkgray;
+}
+
+.product button.remove:hover {
+  background-color: gray;
+}

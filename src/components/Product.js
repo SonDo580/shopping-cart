@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/List.css";
 
 export default function Product(props) {
   const { product, addToCart, removeFromCart, chosenItems } = props;
@@ -11,13 +12,14 @@ export default function Product(props) {
   }
 
   return (
-    <div>
+    <div className="product">
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p>{`$${product.price}`}</p>
 
       {indexChosen !== -1 ? (
         <button
+          className="remove"
           onClick={() => {
             const totalRemove = item.quantity * item.price;
             removeFromCart(product.id, totalRemove);
@@ -27,6 +29,7 @@ export default function Product(props) {
         </button>
       ) : (
         <button
+          className="add"
           onClick={() => {
             const item = { ...product, quantity: 1 };
             addToCart(item);
@@ -35,7 +38,6 @@ export default function Product(props) {
           Add to cart
         </button>
       )}
-      <hr />
     </div>
   );
 }
