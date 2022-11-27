@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import Product from "./Product";
+import "../css/List.css";
 
 import leopardImg from "../images/leopard.jpeg";
 import dinosaurImg from "../images/dinosaur.jpeg";

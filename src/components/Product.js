@@ -1,5 +1,4 @@
 import React from "react";
-import "../css/List.css";
 
 export default function Product(props) {
   const { product, addToCart, removeFromCart, chosenItems } = props;
