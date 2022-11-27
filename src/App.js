@@ -43,7 +43,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar numChosenItems={chosenItems.length} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />}>
