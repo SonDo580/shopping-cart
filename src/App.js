@@ -16,13 +16,15 @@ export default function App() {
     setTotal((prevTotal) => prevTotal + item.price);
   };
 
-  const updateQuantity = (updateID, newQuantity) => {
+  const updateQuantity = (updateID, newQuantity, totalIncrease) => {
     setChosenItems((prevChosenItems) => {
       let newChosenItems = [...prevChosenItems];
       let updateItem = newChosenItems.find((item) => item.id === updateID);
       updateItem.quantity = newQuantity;
       return newChosenItems;
     });
+
+    setTotal((prevTotal) => prevTotal + totalIncrease);
   };
 
   const removeFromCart = (deleteID, totalRemove) => {
