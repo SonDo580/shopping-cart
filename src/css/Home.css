@@ -2,7 +2,7 @@
   background-size: cover;
   padding: 100px 30px;
   background-color: aqua;
-  height: 100%;
+  flex-grow: 1;
 }
 
 .home h1 {

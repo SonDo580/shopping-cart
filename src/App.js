@@ -5,6 +5,7 @@ import Catalog from "./pages/Catalog";
 import NavBar from "./components/NavBar";
 import List from "./components/List";
 import Cart from "./components/Cart";
+import "./App.css";
 
 export default function App() {
   const [chosenItems, setChosenItems] = useState([]);
@@ -42,45 +43,47 @@ export default function App() {
   };
 
   return (
-    <BrowserRouter>
-      <NavBar numChosenItems={chosenItems.length} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />}>
-          <Route
-            path=""
-            element={
-              <List
-                addToCart={addToCart}
-                removeFromCart={removeFromCart}
-                chosenItems={chosenItems}
-              />
-            }
-          />
-          <Route
-            path=":category"
-            element={
-              <List
-                addToCart={addToCart}
-                removeFromCart={removeFromCart}
-                chosenItems={chosenItems}
-              />
-            }
-          />
-        </Route>
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              chosenItems={chosenItems}
-              removeFromCart={removeFromCart}
-              updateQuantity={updateQuantity}
-              total={total}
+    <div className="app">
+      <BrowserRouter>
+        <NavBar numChosenItems={chosenItems.length} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />}>
+            <Route
+              path=""
+              element={
+                <List
+                  addToCart={addToCart}
+                  removeFromCart={removeFromCart}
+                  chosenItems={chosenItems}
+                />
+              }
             />
-          }
-        />
-        <Route path="*" element={<h1>Page Not Found</h1>} />
-      </Routes>
-    </BrowserRouter>
+            <Route
+              path=":category"
+              element={
+                <List
+                  addToCart={addToCart}
+                  removeFromCart={removeFromCart}
+                  chosenItems={chosenItems}
+                />
+              }
+            />
+          </Route>
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                chosenItems={chosenItems}
+                removeFromCart={removeFromCart}
+                updateQuantity={updateQuantity}
+                total={total}
+              />
+            }
+          />
+          <Route path="*" element={<h1>Page Not Found</h1>} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
