@@ -1,8 +1,15 @@
 .home {
   background-size: cover;
-  padding: 100px 30px;
   background-color: aqua;
   flex-grow: 1;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.home .left {
+  padding-left: 100px;
+  padding-top: 100px;
 }
 
 .home h1 {
@@ -34,4 +41,12 @@
 .home a:hover {
   background-color: darkblue;
   color: yellow;
+}
+
+.home .right {
+  text-align: center;
+}
+
+.home img {
+  width: 50%;
 }
