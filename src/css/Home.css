@@ -1,0 +1,37 @@
+.home {
+  background-size: cover;
+  padding: 100px 30px;
+  background-color: aqua;
+  height: 100%;
+}
+
+.home h1 {
+  margin-top: 0;
+  font-size: 2.5rem;
+  color: darkblue;
+}
+
+.home p {
+  font-size: 1.2rem;
+}
+
+.home button {
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+}
+
+.home a {
+  display: block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.home a:hover {
+  background-color: darkblue;
+  color: yellow;
+}
