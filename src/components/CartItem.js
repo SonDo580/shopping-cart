@@ -15,14 +15,17 @@ export default function CartItem(props) {
           onChange={(event) => {
             const { value } = event.target;
 
+            let totalIncrease = 0;
             if (value === "") {
-              const totalIncrease = -(item.quantity * item.price);
+              totalIncrease = -(item.quantity * item.price);
               updateQuantity(item.id, 0, totalIncrease);
               return;
             }
 
             if (!isNaN(Number(value))) {
-              updateQuantity(item.id, Number(value));
+              const quantityIncrease = Number(value) - item.quantity;
+              totalIncrease = quantityIncrease * item.price;
+              updateQuantity(item.id, Number(value), totalIncrease);
             }
           }}
         />
