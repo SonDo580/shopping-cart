@@ -7,6 +7,16 @@ export const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchProducts.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(fetchProducts.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.productList = action.payload;
+      });
+  },
 });
 
 const products = [
