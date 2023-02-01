@@ -6,7 +6,9 @@ export default function SideBar() {
     <aside>
       <ul>
         <li>
-          <NavLink to="">All Robots</NavLink>
+          <NavLink to="" end>
+            All Robots
+          </NavLink>
         </li>
         <li>
           <NavLink to="reptile">Reptile</NavLink>
