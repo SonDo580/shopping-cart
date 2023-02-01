@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -6,8 +6,16 @@ import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
 import ProductList from "./components/ProductList";
 import Catalog from "./pages/Catalog";
+import { useDispatch } from "react-redux";
+import { fetchProducts } from "./redux/slices/productSlice";
 
 export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
+
   const [chosenItems, setChosenItems] = useState([]);
 
   const [total, setTotal] = useState(0);
