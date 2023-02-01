@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../css/SideBar.css";
 
 export default function SideBar() {
@@ -6,16 +6,16 @@ export default function SideBar() {
     <aside>
       <ul>
         <li>
-          <Link to="">All Robots</Link>
+          <NavLink to="">All Robots</NavLink>
         </li>
         <li>
-          <Link to="reptile">Reptile</Link>
+          <NavLink to="reptile">Reptile</NavLink>
         </li>
         <li>
-          <Link to="mammal">Mammal</Link>
+          <NavLink to="mammal">Mammal</NavLink>
         </li>
         <li>
-          <Link to="insect">Insect</Link>
+          <NavLink to="insect">Insect</NavLink>
         </li>
       </ul>
     </aside>
