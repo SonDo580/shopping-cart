@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import robotImg from "../images/robot.png";
 import "../css/Home.css";
+import { Images } from "../constants/images";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         </button>
       </div>
       <div className="right">
-        <img src={robotImg} alt="main robot" />
+        <img src={Images.ROBOT} alt="main robot" />
       </div>
     </div>
   );

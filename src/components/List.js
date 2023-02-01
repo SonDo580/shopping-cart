@@ -4,9 +4,7 @@ import { useParams } from "react-router-dom";
 import Product from "./Product";
 import "../css/List.css";
 
-import leopardImg from "../images/leopard.jpeg";
-import dinosaurImg from "../images/dinosaur.jpeg";
-import mosquitoImg from "../images/mosquito.jpeg";
+import { Images } from "../constants/images";
 
 const products = [
   {
@@ -14,42 +12,42 @@ const products = [
     category: "reptile",
     name: "t-rex",
     price: 100,
-    image: dinosaurImg,
+    image: Images.DINOSAUR,
   },
   {
     id: 2,
     category: "mammal",
     name: "leopard",
     price: 120,
-    image: leopardImg,
+    image: Images.LEOPARD,
   },
   {
     id: 3,
     category: "insect",
     name: "dragonfly",
     price: 110,
-    image: mosquitoImg,
+    image: Images.MOSQUITO,
   },
   {
     id: 4,
     category: "reptile",
     name: "spinosaurous",
     price: 200,
-    image: dinosaurImg,
+    image: Images.DINOSAUR,
   },
   {
     id: 5,
     category: "mammal",
     name: "tiger",
     price: 150,
-    image: leopardImg,
+    image: Images.LEOPARD,
   },
   {
     id: 6,
     category: "insect",
     name: "mosquito",
     price: 180,
-    image: mosquitoImg,
+    image: Images.MOSQUITO,
   },
 ];
 
