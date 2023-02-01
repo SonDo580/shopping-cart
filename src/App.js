@@ -8,6 +8,11 @@ import ProductList from "./components/ProductList";
 import Catalog from "./pages/Catalog";
 import { useDispatch } from "react-redux";
 import { fetchProducts } from "./redux/slices/productSlice";
+import { setupServer } from "./mockAPI";
+
+// if (process.env.NODE_ENV === "development") {
+setupServer();
+// }
 
 export default function App() {
   const dispatch = useDispatch();
