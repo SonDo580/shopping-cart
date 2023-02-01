@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function CartItem(props) {
   const { item, removeFromCart, updateQuantity } = props;
 
