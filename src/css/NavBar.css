@@ -3,6 +3,8 @@ nav {
   justify-content: space-around;
   background-color: black;
   padding: 15px 0;
+  position: sticky;
+  top: 0;
 }
 
 nav a {
