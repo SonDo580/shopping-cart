@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import Product from "./Product";
-import "../css/List.css";
+import "../css/ProductList.css";
 
 import { Images } from "../constants/images";
 
