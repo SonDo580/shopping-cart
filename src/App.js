@@ -2,10 +2,10 @@ import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Catalog from "./pages/Catalog";
 import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
 import ProductList from "./components/ProductList";
+import Catalog from "./pages/Catalog";
 
 export default function App() {
   const [chosenItems, setChosenItems] = useState([]);

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
-import "../css/Cart.css";
+import "./Cart.css";
 
 export default function Cart(props) {
   const { chosenItems, removeFromCart, updateQuantity, total } = props;

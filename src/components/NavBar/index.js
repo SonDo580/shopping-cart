@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../css/NavBar.css";
+import "./NavBar.css";
 
 export default function NavBar(props) {
   const { numChosenItems } = props;
