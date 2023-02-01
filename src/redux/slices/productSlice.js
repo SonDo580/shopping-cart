@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Images } from "../../constants/images";
 
-const initialState = { status: "idle", productList: [] };
+const initialState = { isLoading: false, productList: [] };
 
 export const productSlice = createSlice({
   name: "products",
@@ -10,10 +10,10 @@ export const productSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state, action) => {
-        state.status = "loading";
+        state.isLoading = true;
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.status = "idle";
+        state.isLoading = false;
         state.productList = action.payload;
       });
   },
@@ -70,7 +70,7 @@ export const fetchProducts = createAsyncThunk(
     return await new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(products);
-      }, 2000);
+      }, 3000);
     });
   }
 );
