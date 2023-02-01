@@ -50,7 +50,7 @@ const products = [
   },
 ];
 
-export default function List(props) {
+export default function ProductList(props) {
   const { addToCart, removeFromCart, chosenItems } = props;
   const { category } = useParams("category");
 

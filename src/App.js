@@ -1,11 +1,11 @@
 import { useState } from "react";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import NavBar from "./components/NavBar";
-import List from "./components/List";
 import Cart from "./components/Cart";
-import "./App.css";
+import ProductList from "./components/ProductList";
 
 export default function App() {
   const [chosenItems, setChosenItems] = useState([]);
@@ -52,7 +52,7 @@ export default function App() {
             <Route
               path=""
               element={
-                <List
+                <ProductList
                   addToCart={addToCart}
                   removeFromCart={removeFromCart}
                   chosenItems={chosenItems}
@@ -62,7 +62,7 @@ export default function App() {
             <Route
               path=":category"
               element={
-                <List
+                <ProductList
                   addToCart={addToCart}
                   removeFromCart={removeFromCart}
                   chosenItems={chosenItems}
