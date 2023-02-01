@@ -56,7 +56,7 @@ export default function ProductList(props) {
 
   if (category === undefined) {
     return (
-      <div className="catalog">
+      <div className="productList">
         {products.map((product) => {
           return (
             <Product
@@ -72,7 +72,7 @@ export default function ProductList(props) {
     );
   } else {
     return (
-      <div className="catalog">
+      <div className="productList">
         {products
           .filter((product) => product.category === category)
           .map((product) => {
