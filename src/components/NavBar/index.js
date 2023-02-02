@@ -1,8 +1,10 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { quantitySelector } from "../../redux/selectors";
 import "./NavBar.css";
 
-export default function NavBar(props) {
-  const { numChosenItems } = props;
+export default function NavBar() {
+  const quantity = useSelector(quantitySelector);
 
   return (
     <nav>
@@ -10,7 +12,7 @@ export default function NavBar(props) {
         Mega Robot
       </Link>
       <Link to="/catalog">Shop Now</Link>
-      <Link to="/cart">Go to Cart ({numChosenItems})</Link>
+      <Link to="/cart">Go to Cart ({quantity})</Link>
     </nav>
   );
 }
