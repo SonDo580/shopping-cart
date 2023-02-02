@@ -4,9 +4,9 @@ import { addItem, removeItem } from "../../redux/slices/cartSlice";
 export default function Product(props) {
   const dispatch = useDispatch();
 
-  const { product, addToCart, removeFromCart, chosenItems } = props;
+  const { product, cartItems } = props;
 
-  const indexChosen = chosenItems.findIndex((item) => item.id === product.id);
+  const indexInCart = cartItems.findIndex((item) => item.id === product.id);
 
   return (
     <div className="product">
@@ -14,7 +14,7 @@ export default function Product(props) {
       <h3>{product.name}</h3>
       <p>{`$${product.price}`}</p>
 
-      {indexChosen !== -1 ? (
+      {indexInCart !== -1 ? (
         <button
           className="remove"
           onClick={() => {
