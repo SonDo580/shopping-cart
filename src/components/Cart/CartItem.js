@@ -17,12 +17,18 @@ export default function CartItem(props) {
         <p>
           <label>Quantity: </label>
           <input
-            type="number"
-            min="0"
-            step="1"
             value={item.quantity}
             onChange={(event) => {
-              dispatch(updateQuantity(item.id, event.target.value));
+              const { value } = event.target;
+
+              if (value === "") {
+                dispatch(updateQuantity(item.id, 0));
+                return;
+              }
+
+              if (!isNaN(Number(value))) {
+                dispatch(updateQuantity(item.id, Number(value)));
+              }
             }}
           />
         </p>
