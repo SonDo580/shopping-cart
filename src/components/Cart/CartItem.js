@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import { removeItem } from "../../redux/slices/cartSlice";
+import { removeItem, updateQuantity } from "../../redux/slices/cartSlice";
 
 export default function CartItem(props) {
-  const { item, updateQuantity } = props;
+  const { item } = props;
 
   const dispatch = useDispatch();
 
@@ -17,22 +17,12 @@ export default function CartItem(props) {
         <p>
           <label>Quantity: </label>
           <input
+            type="number"
+            min="0"
+            step="1"
             value={item.quantity}
             onChange={(event) => {
-              const { value } = event.target;
-
-              let totalIncrease = 0;
-              if (value === "") {
-                totalIncrease = -(item.quantity * item.price);
-                updateQuantity(item.id, 0, totalIncrease);
-                return;
-              }
-
-              if (!isNaN(Number(value))) {
-                const quantityIncrease = Number(value) - item.quantity;
-                totalIncrease = quantityIncrease * item.price;
-                updateQuantity(item.id, Number(value), totalIncrease);
-              }
+              dispatch(updateQuantity(item.id, event.target.value));
             }}
           />
         </p>
