@@ -11,31 +11,19 @@ export default function ProductList() {
 
   const { category } = useParams("category");
 
-  if (category === undefined) {
-    return (
-      <div className="productList">
-        {productList.map((product) => {
-          return (
-            <Product cartItems={cartItems} key={product.id} product={product} />
-          );
-        })}
-      </div>
-    );
-  } else {
-    return (
-      <div className="productList">
-        {productList
-          .filter((product) => product.category === category)
-          .map((product) => {
-            return (
-              <Product
-                cartItems={cartItems}
-                key={product.id}
-                product={product}
-              />
-            );
-          })}
-      </div>
-    );
-  }
+  const productsRemain = category
+    ? productList.filter((product) => product.category === category)
+    : productList;
+
+  return (
+    <div className="productList">
+      {productsRemain.length === 0 ? (
+        <h1>No Products</h1>
+      ) : (
+        productsRemain.map((product) => (
+          <Product cartItems={cartItems} key={product.id} product={product} />
+        ))
+      )}
+    </div>
+  );
 }
