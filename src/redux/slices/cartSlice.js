@@ -13,7 +13,15 @@ export const cartSlice = createSlice({
       let deleteIndex = state.findIndex((item) => item.id === action.payload);
       state.splice(deleteIndex, 1);
     },
-    updateQuantity: () => {},
+    updateQuantity: {
+      reducer: (state, action) => {
+        let updateItem = state.find((item) => item.id === action.payload.id);
+        updateItem.quantity = action.payload.quantity;
+      },
+      prepare: (id, quantity) => {
+        return { payload: { id, quantity } };
+      },
+    },
   },
 });
 
