@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import "./Cart.css";
+import { useSelector } from "react-redux";
+import { cartItemsSelector } from "../../redux/selectors";
 
 export default function Cart(props) {
   const { chosenItems, removeFromCart, updateQuantity, total } = props;
+
+  const cartItems = useSelector(cartItemsSelector);
 
   return (
     <div className="cart">
@@ -24,7 +28,7 @@ export default function Cart(props) {
       </div>
       <hr />
       <div className="cartItems">
-        {chosenItems.map((item) => {
+        {cartItems.map((item) => {
           return (
             <CartItem
               key={item.id}
