@@ -18,7 +18,11 @@ nav a:hover {
   text-decoration: underline;
 }
 
+nav a.active {
+  color: yellow;
+}
+
 nav .logo {
   font-size: 2.5rem;
-  color: yellow;
+  color: cyan;
 }
