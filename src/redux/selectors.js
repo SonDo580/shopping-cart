@@ -11,3 +11,9 @@ export const totalSelector = createSelector(cartItemsSelector, (cartItems) => {
     0
   );
 });
+export const quantitySelector = createSelector(
+  cartItemsSelector,
+  (cartItems) => {
+    return cartItems.length;
+  }
+);
