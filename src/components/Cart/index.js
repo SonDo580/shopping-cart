@@ -4,9 +4,7 @@ import "./Cart.css";
 import { useSelector } from "react-redux";
 import { cartItemsSelector, totalSelector } from "../../redux/selectors";
 
-export default function Cart(props) {
-  const { removeFromCart, updateQuantity } = props;
-
+export default function Cart() {
   const cartItems = useSelector(cartItemsSelector);
   const total = useSelector(totalSelector);
 
@@ -30,14 +28,7 @@ export default function Cart(props) {
       <hr />
       <div className="cartItems">
         {cartItems.map((item) => {
-          return (
-            <CartItem
-              key={item.id}
-              item={item}
-              removeFromCart={removeFromCart}
-              updateQuantity={updateQuantity}
-            />
-          );
+          return <CartItem key={item.id} item={item} />;
         })}
       </div>
     </div>
