@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { quantitySelector } from "../../redux/selectors";
-import "./NavBar.css";
+import "./NavBar.scss";
 
 export default function NavBar() {
   const quantity = useSelector(quantitySelector);
