@@ -5,25 +5,18 @@ import { cartItemsSelector, productListSelector } from "../../redux/selectors";
 import Product from "./Product";
 import "./ProductList.css";
 
-export default function ProductList(props) {
-  const { addToCart, removeFromCart, chosenItems } = props;
-  const { category } = useParams("category");
-
+export default function ProductList() {
   const productList = useSelector(productListSelector);
   const cartItems = useSelector(cartItemsSelector);
+
+  const { category } = useParams("category");
 
   if (category === undefined) {
     return (
       <div className="productList">
         {productList.map((product) => {
           return (
-            <Product
-              addToCart={addToCart}
-              removeFromCart={removeFromCart}
-              cartItems={cartItems}
-              key={product.id}
-              product={product}
-            />
+            <Product cartItems={cartItems} key={product.id} product={product} />
           );
         })}
       </div>
@@ -36,8 +29,6 @@ export default function ProductList(props) {
           .map((product) => {
             return (
               <Product
-                addToCart={addToCart}
-                removeFromCart={removeFromCart}
                 cartItems={cartItems}
                 key={product.id}
                 product={product}
