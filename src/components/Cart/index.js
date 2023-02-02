@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import "./Cart.css";
 import { useSelector } from "react-redux";
-import { cartItemsSelector } from "../../redux/selectors";
+import { cartItemsSelector, totalSelector } from "../../redux/selectors";
 
 export default function Cart(props) {
-  const { chosenItems, removeFromCart, updateQuantity, total } = props;
+  const { removeFromCart, updateQuantity } = props;
 
   const cartItems = useSelector(cartItemsSelector);
+  const total = useSelector(totalSelector);
 
   return (
     <div className="cart">
