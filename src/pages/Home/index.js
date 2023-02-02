@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "./Home.scss";
 import { Images } from "../../constants/images";
 
 export default function Home() {
