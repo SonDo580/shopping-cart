@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { cartItemsSelector, productListSelector } from "../../redux/selectors";
 
 import Product from "./Product";
-import "./ProductList.css";
+import "./ProductList.scss";
 
 export default function ProductList() {
   const productList = useSelector(productListSelector);
