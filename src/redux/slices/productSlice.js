@@ -28,7 +28,12 @@ export const fetchProducts = createAsyncThunk(
     try {
       const res = await fetch("/api/products");
       const data = await res.json();
-      return data.products;
+
+      return await new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(data.products);
+        }, 2000);
+      });
     } catch (err) {
       throw err;
     }
