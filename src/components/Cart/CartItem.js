@@ -1,5 +1,10 @@
+import { useDispatch } from "react-redux";
+import { removeItem } from "../../redux/slices/cartSlice";
+
 export default function CartItem(props) {
-  const { item, removeFromCart, updateQuantity } = props;
+  const { item, updateQuantity } = props;
+
+  const dispatch = useDispatch();
 
   return (
     <div className="cartItem">
@@ -34,8 +39,7 @@ export default function CartItem(props) {
         <button
           className="remove"
           onClick={() => {
-            const totalRemove = item.price * item.quantity;
-            removeFromCart(item.id, totalRemove);
+            dispatch(removeItem(item.id));
           }}
         >
           Remove from cart
