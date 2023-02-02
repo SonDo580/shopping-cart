@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addItem } from "../../redux/slices/cartSlice";
+import { addItem, removeItem } from "../../redux/slices/cartSlice";
 
 export default function Product(props) {
   const dispatch = useDispatch();
@@ -7,11 +7,6 @@ export default function Product(props) {
   const { product, addToCart, removeFromCart, chosenItems } = props;
 
   const indexChosen = chosenItems.findIndex((item) => item.id === product.id);
-
-  let item = null;
-  if (indexChosen !== -1) {
-    item = chosenItems[indexChosen];
-  }
 
   return (
     <div className="product">
@@ -23,8 +18,7 @@ export default function Product(props) {
         <button
           className="remove"
           onClick={() => {
-            const totalRemove = item.quantity * item.price;
-            removeFromCart(product.id, totalRemove);
+            dispatch(removeItem(product.id));
           }}
         >
           Remove from cart
