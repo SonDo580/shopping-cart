@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { productListSelector } from "../../redux/selectors";
+import { cartItemsSelector, productListSelector } from "../../redux/selectors";
 
 import Product from "./Product";
 import "./ProductList.css";
@@ -10,6 +10,7 @@ export default function ProductList(props) {
   const { category } = useParams("category");
 
   const productList = useSelector(productListSelector);
+  const cartItems = useSelector(cartItemsSelector);
 
   if (category === undefined) {
     return (
@@ -19,7 +20,7 @@ export default function ProductList(props) {
             <Product
               addToCart={addToCart}
               removeFromCart={removeFromCart}
-              chosenItems={chosenItems}
+              cartItems={cartItems}
               key={product.id}
               product={product}
             />
@@ -37,7 +38,7 @@ export default function ProductList(props) {
               <Product
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
-                chosenItems={chosenItems}
+                cartItems={cartItems}
                 key={product.id}
                 product={product}
               />
