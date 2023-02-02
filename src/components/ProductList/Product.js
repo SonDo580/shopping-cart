@@ -1,4 +1,9 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/slices/cartSlice";
+
 export default function Product(props) {
+  const dispatch = useDispatch();
+
   const { product, addToCart, removeFromCart, chosenItems } = props;
 
   const indexChosen = chosenItems.findIndex((item) => item.id === product.id);
@@ -29,7 +34,7 @@ export default function Product(props) {
           className="add"
           onClick={() => {
             const item = { ...product, quantity: 1 };
-            addToCart(item);
+            dispatch(addItem(item));
           }}
         >
           Add to cart
