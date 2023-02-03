@@ -2,6 +2,8 @@ $color-primary: blueviolet;
 $color-primary-hover: blue;
 $color-secondary: darkgray;
 $color-secondary-hover: gray;
+$color-danger: red;
+$color-danger-hover: darkred;
 
 .app {
   min-height: 100vh;
@@ -34,5 +36,13 @@ $color-secondary-hover: gray;
 
   &:hover {
     background-color: $color-secondary-hover;
+  }
+}
+
+.btn-danger {
+  background-color: $color-danger;
+
+  &:hover {
+    background-color: $color-danger-hover;
   }
 }
