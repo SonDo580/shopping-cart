@@ -10,50 +10,6 @@
   .total {
     color: darkblue;
   }
-
-  button {
-    padding: 10px 20px;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    &.continue {
-      padding: 0;
-
-      a {
-        background-color: blueviolet;
-        border-radius: 5px;
-        padding: 10px 20px;
-        text-decoration: none;
-        color: white;
-
-        &:hover {
-          background-color: blue;
-        }
-      }
-    }
-
-    &.checkout {
-      background-color: red;
-
-      &:hover {
-        background-color: darkred;
-      }
-    }
-
-    &.remove {
-      background-color: darkgray;
-
-      &:hover {
-        background-color: gray;
-      }
-    }
-  }
 }
 
 .cartItem {
