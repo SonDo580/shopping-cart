@@ -33,7 +33,7 @@ export default function CartItem(props) {
           />
         </p>
         <button
-          className="remove"
+          className="btn btn-secondary"
           onClick={() => {
             dispatch(removeItem(item.id));
           }}

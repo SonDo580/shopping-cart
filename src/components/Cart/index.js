@@ -15,11 +15,17 @@ export default function Cart() {
         <strong>
           Total: <span className="total">${total}</span>
         </strong>
-        <button className="continue">
-          <Link to="/catalog">Continue buying</Link>
+        <button className="btn" style={{ padding: 0 }}>
+          <Link
+            to="/catalog"
+            className="btn btn-primary"
+            style={{ textDecoration: "none" }}
+          >
+            Continue buying
+          </Link>
         </button>
         <button
-          className="checkout"
+          className="btn btn-danger"
           onClick={() => alert("This feature is not available yet!")}
         >
           Check out
