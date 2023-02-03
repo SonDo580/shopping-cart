@@ -1,0 +1,33 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-primary {
+  background-color: blueviolet;
+
+  &:hover {
+    background-color: blue;
+  }
+}
+
+.btn-secondary {
+  background-color: darkgray;
+
+  &:hover {
+    background-color: gray;
+  }
+}
