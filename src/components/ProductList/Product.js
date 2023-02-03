@@ -16,7 +16,7 @@ export default function Product(props) {
 
       {indexInCart !== -1 ? (
         <button
-          className="remove"
+          className="btn btn-secondary"
           onClick={() => {
             dispatch(removeItem(product.id));
           }}
@@ -25,7 +25,7 @@ export default function Product(props) {
         </button>
       ) : (
         <button
-          className="add"
+          className="btn btn-primary"
           onClick={() => {
             const item = { ...product, quantity: 1 };
             dispatch(addItem(item));
