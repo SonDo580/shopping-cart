@@ -1,3 +1,8 @@
+$color-primary: blueviolet;
+$color-primary-hover: blue;
+$color-secondary: darkgray;
+$color-secondary-hover: gray;
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -17,17 +22,17 @@
 }
 
 .btn-primary {
-  background-color: blueviolet;
+  background-color: $color-primary;
 
   &:hover {
-    background-color: blue;
+    background-color: $color-primary-hover;
   }
 }
 
 .btn-secondary {
-  background-color: darkgray;
+  background-color: $color-secondary;
 
   &:hover {
-    background-color: gray;
+    background-color: $color-secondary-hover;
   }
 }
