@@ -15,32 +15,4 @@
     width: 100%;
     aspect-ratio: 5 / 3;
   }
-
-  button {
-    padding: 10px 20px;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    &.add {
-      background-color: blueviolet;
-
-      &:hover {
-        background-color: blue;
-      }
-    }
-
-    &.remove {
-      background-color: darkgray;
-
-      &:hover {
-        background-color: gray;
-      }
-    }
-  }
 }
