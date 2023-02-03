@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import CartItem from "./CartItem";
-import "./Cart.scss";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { cartItemsSelector, totalSelector } from "../../redux/selectors";
+import "./Cart.scss";
+import CartItem from "./CartItem";
 
 export default function Cart() {
   const cartItems = useSelector(cartItemsSelector);

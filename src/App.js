@@ -1,14 +1,18 @@
 import { useEffect } from "react";
-import "./App.scss";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import NavBar from "./components/NavBar";
-import Cart from "./components/Cart";
-import ProductList from "./components/ProductList";
-import Catalog from "./pages/Catalog";
 import { useDispatch } from "react-redux";
-import { fetchProducts } from "./redux/slices/productSlice";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import "./App.scss";
+
+import Cart from "./components/Cart";
+import NavBar from "./components/NavBar";
+import ProductList from "./components/ProductList";
+
+import Home from "./pages/Home";
+import Catalog from "./pages/Catalog";
+
 import { setupServer } from "./mockAPI";
+import { fetchProducts } from "./redux/slices/productSlice";
 
 // if (process.env.NODE_ENV === "development") {
 setupServer();

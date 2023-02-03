@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import "./Home.scss";
 import { Images } from "../../constants/images";
+import "./Home.scss";
 
 export default function Home() {
   return (

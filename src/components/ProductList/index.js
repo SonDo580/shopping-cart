@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { cartItemsSelector, productListSelector } from "../../redux/selectors";
-
 import Product from "./Product";
 import "./ProductList.scss";
 
